@@ -1,39 +1,13 @@
-/**
- * Portfolio component
- *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
- *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
- */
-
 import React from "react";
-
-/**
- * Desk image
- *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
 import image from "../images/design-desk.jpeg";
 
 const imageAltText = "desktop with books and laptop";
 
-/**
- * Project list
- *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
- */
 const projectList = [
   {
     title: "TindDog App 🎉",
     description:
-      "Using HTML,CSS and Bootstrap, I built website for dogs showcasing my skills in designing and developing a responsive and user-friendly website.",
+      "Using HTML, CSS, and Bootstrap, I built a website for dogs showcasing my skills in designing and developing a responsive and user-friendly website.",
     url: "https://github.com/quratulain08/Tindog",
   },
   {
@@ -45,36 +19,135 @@ const projectList = [
   {
     title: "Hand Gesture Controlled Game",
     description:
-      "along with my mates we have developed a game which is controlled by hand gestures by using Python, Media pipe and OpenCv. ",
+      "Along with my mates, we developed a game which is controlled by hand gestures using Python, MediaPipe, and OpenCV.",
     url: "https://github.com/mahrukh-dev/HandGestureCarGame",
   },
   {
     title: "DivineGlow-React",
-    description:
-      "By using React I have developed a simple Ecommerce website.",
+    description: "By using React, I developed a simple eCommerce website.",
     url: "https://github.com/quratulain08/Ecommerce-web-React",
+  },
+  {
+    title: "BookStore Website",
+    description: " I have integrated dynamic database  of books with seamless user interface.Using swiper and flowbite to design elements.It enables users to edit and manage books by using mern",
+url: "https://github.com/quratulain08/Mern-Bookstore",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
+    <section className="portfolio-section" id="portfolio">
+      <style>
+        {`
+          .portfolio-section {
+            padding: 2rem;
+            background-color: #f9f9f9;
+          }
+
+          .portfolio-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #333;
+          }
+
+          .portfolio-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+          }
+
+          .portfolio-image {
+            max-width: 100%;
+            align-self: center;
+          }
+
+          .portfolio-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+
+          .portfolio-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+          }
+
+          .portfolio-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            transition: transform 0.3s;
+          }
+
+          .portfolio-box:hover {
+            transform: translateY(-5px);
+          }
+
+          .portfolio-box h3 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+            font-size: 1.25rem;
+          }
+
+          .portfolio-box p {
+            font-size: 0.875rem;
+            color: #555;
+          }
+
+          .portfolio-box a {
+            text-decoration: none;
+            color: inherit;
+          }
+
+          @media (max-width: 1024px) {
+            .portfolio-content {
+              grid-template-columns: 1fr;
+            }
+            
+            .portfolio-image {
+              grid-column: 1 / -1;
+              width: 100%;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .portfolio-container {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .portfolio-section {
+              padding: 1rem;
+            }
+
+            .portfolio-box p {
+              font-size: 0.75rem;
+            }
+
+            .portfolio-image img {
+              border-radius: 4px;
+            }
+          }
+        `}
+      </style>
+      <h2>Portfolio</h2>
+      <div className="portfolio-content">
+        <div className="portfolio-image">
+          <img src={image} alt={imageAltText} />
         </div>
-        <div className="container">
+        <div className="portfolio-container">
           {projectList.map((project) => (
-            <div className="box" key={project.title}>
+            <div className="portfolio-box" key={project.title}>
               <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
+                <h3>{project.title}</h3>
               </a>
-              <p className="small">{project.description}</p>
+              <p>{project.description}</p>
             </div>
           ))}
         </div>
