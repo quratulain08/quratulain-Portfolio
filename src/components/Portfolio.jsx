@@ -32,6 +32,12 @@ const projectList = [
     description: " I have integrated dynamic database  of books with seamless user interface.Using swiper and flowbite to design elements.It enables users to edit and manage books by using mern",
 url: "https://github.com/quratulain08/Mern-Bookstore",
   },
+ 
+  {
+    title: "Counter App",
+    description: "Using react.js, I have build simple counter App which increments ,decrements and reset the counter.It invloves the concept State management and event handling",
+url: " https://github.com/quratulain08/CounterApp",
+  },
 ];
 
 const Portfolio = () => {
@@ -69,12 +75,18 @@ const Portfolio = () => {
             object-fit: cover;
             border-radius: 8px;
           }
-
+            .portfolio-section p {
+            text-align: center;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 2rem;
+          }
           .portfolio-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
           }
+          
 
           .portfolio-box {
             background-color: #fff;
@@ -137,6 +149,7 @@ const Portfolio = () => {
         `}
       </style>
       <h2>Portfolio</h2>
+      <p>Click On the projects to get the Link of the github repository</p>
       <div className="portfolio-content">
         <div className="portfolio-image">
           <img src={image} alt={imageAltText} />
