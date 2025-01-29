@@ -34,9 +34,9 @@ url: "https://github.com/quratulain08/Mern-Bookstore",
   },
  
   {
-    title: "Counter App",
-    description: "Using react.js, I have build simple counter App which increments ,decrements and reset the counter.It invloves the concept State management and event handling",
-url: " https://github.com/quratulain08/CounterApp",
+    title: "Sentiment Analysis using NLP",
+    description: "Using python, I have trained a model to anaylze public opinions.It has helped to understand that how we can extract meaningful information from raw data",
+url: "https://github.com/quratulain08/Sentiment-Analysis-NLP",
   },
 ];
 
